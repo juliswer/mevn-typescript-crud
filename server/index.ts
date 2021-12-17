@@ -1,4 +1,6 @@
 import app from './app'
+import {startConnection} from './database'
 
-app.listen(3000)
-console.log('Server is runing on port 3000')
+startConnection();
+app.listen(3000);
+console.log('Server is runing on port 3000');
