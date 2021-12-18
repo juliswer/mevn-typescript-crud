@@ -1,7 +1,11 @@
 import { Router } from 'express'
+import Task from '../models/Task'
+
 const router = Router()
 
-router.get('/tasks', (req, res) => {
+router.get('/tasks', async (req, res) => {
+    const tasks = await Task.find()
+    console.log(tasks)
     res.send('getting tasks!');
 })
 
