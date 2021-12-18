@@ -5,11 +5,16 @@ const router = Router()
 
 router.get('/tasks', async (req, res) => {
     const tasks = await Task.find()
-    console.log(tasks)
-    res.send('getting tasks!');
+    res.send(tasks);
 })
 
-router.post('/tasks', (req, res) => {
+router.post('/tasks', async (req, res) => {
+    const { title, description } = req.body
+
+    const task = new Task({title, description})
+
+    await task.save();
+
     res.send('creating tasks!');
 })
 

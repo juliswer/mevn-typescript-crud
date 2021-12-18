@@ -15,6 +15,8 @@ const taskSchema = new Schema({
         type: Boolean,
         default: false
     }
+}, {
+    versionKey: false
 })
 
 export default model('Task', taskSchema)
