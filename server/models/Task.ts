@@ -16,6 +16,7 @@ const taskSchema = new Schema({
         default: false
     }
 }, {
+    timestamps: true,
     versionKey: false
 })
 
