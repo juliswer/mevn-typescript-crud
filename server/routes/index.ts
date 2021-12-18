@@ -15,11 +15,16 @@ router.post('/tasks', async (req, res) => {
 
     await task.save();
 
-    res.send('creating tasks!');
+    res.json(task)
 })
 
-router.get('/tasks/:id', (req, res) => {
-    res.send('getting a task!');
+router.get('/tasks/:id', async (req, res) => {
+    try {
+        const task = await Task.findById(req.params.id)
+        res.send(task)  
+    } catch (error) {
+        console.error(error)
+    }
 })
 
 router.delete('/tasks/:id', (req, res) => {
