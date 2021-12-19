@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { Task } from '@/interfaces/Task'
-import { getTask } from '@/services/TaskService'
+import { getTasks } from '@/services/TaskService'
 import { defineComponent} from 'vue'
 
 
@@ -20,7 +20,7 @@ export default defineComponent({
     },
     methods: {
         async loadTasks() {
-            const res = await getTask()
+            const res = await getTasks()
             this.tasks = res.data
         }
     },
