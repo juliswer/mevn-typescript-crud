@@ -4,7 +4,7 @@
 
             <h1 class="text-center h3 mb-3">Create Task</h1>
 
-            <input type="text" placeholder="Write a title" v-model="task.title" class="form-control mb-3">
+            <input type="text" autofocus placeholder="Write a title" v-model="task.title" class="form-control mb-3">
 
             <textarea rows="3" placeholder="Write a description" v-model="task.description" class="form-control mb-3"></textarea>
 
