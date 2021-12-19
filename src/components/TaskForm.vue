@@ -11,6 +11,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import {Task} from '@/interfaces/Task';
+import {createTask} from '@/services/TaskService'
 
 export default defineComponent({
     data() {
@@ -19,8 +20,9 @@ export default defineComponent({
         };
     },
     methods: {
-        saveTask() {
-            console.log(this.task);
+        async saveTask() {
+            const res = await createTask(this.task)
+            console.log(res);
         }
     }
 });
