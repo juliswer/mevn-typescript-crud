@@ -2,7 +2,7 @@
     <div class="col-md-4 offset-md-4">
 
             <form @submit.prevent="handleUpdate()" class="card card-body">
-                <h1 class="text-center h3 mb-3">Actualiza o elimina {{currentTask.title}}</h1>
+                <h1 class="text-center h3 mb-3">Actualiza o elimina <span style="color: #a91024"> {{currentTask.title}} </span></h1>
                 <input type="text" v-model="currentTask.title" class="form-control mb-3">
 
                 <textarea rows="3" v-model="currentTask.description" class="form-control mb-3"></textarea>
