@@ -9,13 +9,13 @@
         <button>update</button>
     </form>
 
-    <button>Delete</button>
+    <button @click="handleDelete()">Delete</button>
 
 </template>
 
 <script lang="ts">
 import { Task } from "@/interfaces/Task";
-import { getTask, updateTask } from "@/services/TaskService";
+import { deleteTask, getTask, updateTask } from "@/services/TaskService";
 import { defineComponent } from "@vue/runtime-core"
 
 export default defineComponent({
@@ -33,6 +33,12 @@ export default defineComponent({
         async handleUpdate() {
             if (typeof this.$route.params.id === 'string') {
                 const res = await updateTask(this.$route.params.id, this.currentTask)
+                console.log(res);
+            }
+        },
+        async handleDelete() {
+            if (typeof this.$route.params.id === 'string') {
+                const res = await deleteTask(this.$route.params.id)
                 console.log(res);
             }
         }
