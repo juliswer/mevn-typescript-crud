@@ -3,15 +3,21 @@
 </template>
 
 <script lang="ts">
+import { Task } from '@/interfaces/Task'
 import { getTask } from '@/services/TaskService'
 import { defineComponent} from 'vue'
 
 
 export default defineComponent({
+    data() {
+        return {
+            tasks: [] as Task[]
+        }
+    },
     methods: {
         async loadTasks() {
             const res = await getTask()
-            console.log(res);
+            this.tasks = res.data
         }
     },
     mounted() {
