@@ -10,7 +10,9 @@
                 <button class="btn btn-primary">Update</button>
             </form>
 
-            <button @click="handleDelete()" class="btn btn-danger">Delete</button>
+            <div class="text-center mt-3">
+                <button @click="handleDelete()" class="btn btn-danger">Delete</button>
+            </div>
     </div>
 
 </template>
