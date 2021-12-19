@@ -13,6 +13,6 @@ app.use(express.json());
 
 app.use('/api', tasksRoutes)
 
-app.use(express.static(path.join(__dirname, '../dist')))
+app.use(express.static(path.join(__dirname, '..', '..', 'dist')))
 
 export default app;
