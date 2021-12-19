@@ -8,7 +8,7 @@
 
             <textarea rows="3" placeholder="Write a description" v-model="task.description" class="form-control mb-3"></textarea>
 
-            <button class="btn btn-primary">Save</button>
+            <button class="btn btn-primary" :disabled="!task.title || !task.description">Save</button>
         </form>
     </div>
 </template>
