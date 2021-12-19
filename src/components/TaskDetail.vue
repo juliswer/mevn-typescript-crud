@@ -33,15 +33,13 @@ export default defineComponent({
         async handleUpdate() {
             if (typeof this.$route.params.id === 'string') {
                 const res = await updateTask(this.$route.params.id, this.currentTask)
-                console.log(res);
-                this.$router.push({name: 'tasks'});
+                this.$router.push("/");
             }
         },
         async handleDelete() {
             if (typeof this.$route.params.id === 'string') {
                 const res = await deleteTask(this.$route.params.id)
-                console.log(res);
-                this.$router.push({name: 'tasks'});
+                this.$router.push("/");
             }
         }
     },
