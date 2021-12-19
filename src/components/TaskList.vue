@@ -1,6 +1,5 @@
 <template>
-  <div class="container p-5">
-      <ul class="list-group">
+  <ul class="list-group">
         <li
           class="list-group-item list-group-item-action"
           style="cursor: pointer"
@@ -12,7 +11,6 @@
           {{ task.title }}
         </li>
     </ul>
-  </div>
 </template>
 
 <script lang="ts">
